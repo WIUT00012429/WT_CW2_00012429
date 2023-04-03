@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
     const data = await getFile();
-    res.render('pages/index', { posts: data });
+    res.render('pages/index', { data });
 });
 
 

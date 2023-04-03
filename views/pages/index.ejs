@@ -14,11 +14,15 @@
 		<link rel="stylesheet" href="/css/main.css" />
 	</head>
 	<body class="w-100">
-		<div class="container flex">
+		<div class="container">
+			<p>
+				This web application was created to fulfill Web Technology module’s
+				requirements and does not represent an actual company or service
+			</p>
 			<h1 class="mb-4">Blog Articles</h1>
 			<a href="/new" class="btn btn-success">New Article</a>
 
-			<% posts.data.forEach(article => { %>
+			<% data.data.forEach(article => { %>
 			<div class="card mt-4">
 				<div class="card-body">
 					<h4 class="card-title"><%= article.title %></h4>
