@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Blog</title>
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+	<body class="w-100">
+		<div class="container flex">
+			<h1 class="mb-4">Blog Articles</h1>
+			<a href="/new" class="btn btn-success">New Article</a>
+
+			<% posts.data.forEach(article => { %>
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4 class="card-title"><%= article.title %></h4>
+					<div class="card-text mb-2"><%= article.description %></div>
+					<a href="/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+					<form
+						action="/delete/<%= article.id %>"
+						method="POST"
+						class="d-inline"
+					>
+						<button type="submit" class="btn btn-danger">Delete</button>
+					</form>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+	</body>
+</html>
